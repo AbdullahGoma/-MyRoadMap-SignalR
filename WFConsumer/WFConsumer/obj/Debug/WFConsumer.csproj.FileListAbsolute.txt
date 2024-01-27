@@ -1,0 +1,16 @@
+F:\ITI-Course\9- SignalR\WFConsumer\WFConsumer\bin\Debug\WFConsumer.exe.config
+F:\ITI-Course\9- SignalR\WFConsumer\WFConsumer\bin\Debug\WFConsumer.exe
+F:\ITI-Course\9- SignalR\WFConsumer\WFConsumer\bin\Debug\WFConsumer.pdb
+F:\ITI-Course\9- SignalR\WFConsumer\WFConsumer\bin\Debug\Microsoft.AspNet.SignalR.Client.dll
+F:\ITI-Course\9- SignalR\WFConsumer\WFConsumer\bin\Debug\Newtonsoft.Json.dll
+F:\ITI-Course\9- SignalR\WFConsumer\WFConsumer\bin\Debug\Microsoft.AspNet.SignalR.Client.pdb
+F:\ITI-Course\9- SignalR\WFConsumer\WFConsumer\bin\Debug\Microsoft.AspNet.SignalR.Client.xml
+F:\ITI-Course\9- SignalR\WFConsumer\WFConsumer\bin\Debug\Newtonsoft.Json.xml
+F:\ITI-Course\9- SignalR\WFConsumer\WFConsumer\obj\Debug\WFConsumer.csproj.AssemblyReference.cache
+F:\ITI-Course\9- SignalR\WFConsumer\WFConsumer\obj\Debug\WFConsumer.Form1.resources
+F:\ITI-Course\9- SignalR\WFConsumer\WFConsumer\obj\Debug\WFConsumer.Properties.Resources.resources
+F:\ITI-Course\9- SignalR\WFConsumer\WFConsumer\obj\Debug\WFConsumer.csproj.GenerateResource.cache
+F:\ITI-Course\9- SignalR\WFConsumer\WFConsumer\obj\Debug\WFConsumer.csproj.CoreCompileInputs.cache
+F:\ITI-Course\9- SignalR\WFConsumer\WFConsumer\obj\Debug\WFConsumer.csproj.CopyComplete
+F:\ITI-Course\9- SignalR\WFConsumer\WFConsumer\obj\Debug\WFConsumer.exe
+F:\ITI-Course\9- SignalR\WFConsumer\WFConsumer\obj\Debug\WFConsumer.pdb

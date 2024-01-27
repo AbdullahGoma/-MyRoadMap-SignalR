@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="Scripts/jquery-1.6.4.js"></script>
+    <script src="Scripts/jquery.signalR-2.4.3.min.js"></script>
+
+    <!--Load Proxy File-->
+    <!--<script src="/signalr/hubs"></script>
+    <script>
+        $(function () {
+            name = prompt("Enter Your Name: ");
+
+            // Limit Hub 
+            prox = $.connection.chat;
+
+            // Start Connection
+            $.connection.hub.start(/*{ transport:['longPoling', 'foreverFrame']}*/);
+            //alert("Start Connection");
+
+            // Subscribe Callback Method NewMessage
+            prox.client.newMessage = function (name, message) {
+                //alert("New Message From Server");
+                $("ul").append("<li>"+ name + ": " + message + "</li>")
+            }
+
+
+        })
+
+        function send() {
+            //alert("Calling Server Method: sendMessage")
+            prox.server.sendMessage(name, $("#txt").val());
+        }
+
+    </script>-->
+
+    <script>
+        //PageLoad
+        $(function () {
+            name = prompt("Enter Your Name")
+            // Define Connection
+            var con = $.hubConnection();
+
+            var counter = 1;
+
+            if (counter == 1) {
+                $("ul").append("<li>" + name + ", Messages" + "</li>");
+                counter++;
+            }
+
+            // Create Proxy
+            prox = con.createHubProxy("chat");
+
+            // Start Connection
+            con.start();
+
+            // Define Subscribe Method newMessage
+            prox.on("newMessage", function (message) {
+                $("ul").append("<li>" + message.name + ": " + message.message1 + "</li>")
+            })
+
+            prox.on("newMember", function (name, gname) {
+                $("ul").append("<li><i>" + name + " joined " + gname + "</i></li>")
+            })
+
+            prox.on("groupmsg", function (name, gname, message) {
+                // Ali(SD): "Send Message"
+                $("ul").append("<li>" +name + "(" + gname + "): " + message + "</li>")
+            })
+
+            //prox.on("removeMessage", function (message) {
+            //    $("ul").remove("<li>" + message + "</li>")
+            //})
+
+        })
+
+
+        // Calling Server Method sendMessage
+        function send() {
+            //prox.invoke("sendMessage", name, $("#txt").val());
+            prox.invoke("sendMessage", { name: name, message1: $("#txt").val() });
+        }
+
+        function join() {
+            prox.invoke("joinGroup", $("#gtxt").val(), name)
+        }
+
+        function sendgroup() {
+            prox.invoke("sendToGroup", $("#gtxt").val(), name, $("#txt").val())
+        }
+
+    </script>
+
+
+</head>
+<body>
+    <input type="text" id="txt" />
+    <input type="button" value="send" onclick="send()" />
+
+    <br />
+
+    <input type="text" id="gtxt" />
+    <input type="button" value="Join" onclick="join()" />
+
+    <input type="button" value="send to group" onclick="sendgroup()" />
+
+    <ul>
+        <!--<li>Message</li>-->
+    </ul>
+
+</body>
+</html>
